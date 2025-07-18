@@ -54,6 +54,14 @@ body {
 .nav_item {
   margin: 0rem 0.7rem;
 }
+.nav_link:hover {
+  color: #f9a100;
+  font-size: 1.7rem;
+}
+.mobile_nav_link:link{
+  color: #f9a100;
+  font-size: 1.7rem;
+}
 .nav_link {
   text-decoration: none;
   color: var(--color-secondary);
@@ -93,6 +101,21 @@ body {
 }
 .header_img {
   width: 35%;
+}
+.header_img h3{
+  font-size: 1.8rem;
+  text-align: center;
+  font-size: 800;
+  color: #f9a100;
+}
+.images_top{
+  width: 100%;
+}
+.images_title{
+  font-size: 2rem;
+  font-weight: 800;
+  text-align: center;
+  color: #131941;
 }
 .header_title {
   font-size: 5.2rem;
@@ -184,25 +207,52 @@ body {
 
 /* experience */
 .experience_container {
-  width: 200%;
   display: flex;
-  align-items: center;
+  justify-content: center; /* Center items horizontally if flex-direction is row (default) */
+  align-items: center; /* Align items vertically */
+  gap: 3rem; /* Space between image/video and text */
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  padding: 5rem 0; /* Add some padding around the section */
 }
 .experience_image {
-  width: 40%;
+  flex: 1; /* Allow image/video container to grow */
+  min-width: 300px; /* Ensure it doesn't get too small */
+  max-width: 600px; /* Limit its maximum width */
+  text-align: center; /* Ensures the video itself is centered within this flex item */
 }
-.expericen_text {
-  width: 60%;
-  margin-left: 3rem;
+
+.responsive-video {
+  width: 100%; /* Makes the video take the full width of its parent (.experience_image) */
+  height: auto; /* Maintains aspect ratio */
+  display: block; /* Removes any extra space below the video */
+  border-radius: 0.7rem; /* Optional: adds rounded corners to the video player */
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+  object-fit: cover; /* Ensures video fills its area without letterboxing, potentially cropping */
+  /* If you prefer letterboxing to avoid cropping, use object-fit: contain; */
 }
+
+@media screen and (max-width: 768px) {
+  .experience_container {
+    flex-direction: column; /* Stack video and text vertically on smaller screens */
+    text-align: center; /* Center align content when stacked */
+    gap: 3rem; /* Adjust gap for mobile */
+  }
+
+  .experience_image {
+    width: 90%; /* Make them take up more width on mobile */
+    max-width: 100%; /* Ensure they don't exceed container width */
+  }
+}
+
 .experience_title {
-  font-size: 3.2rem;
+  font-size: 2rem;
   font-weight: 500;
   color: var(--color-secondary);
 }
 .experience_text {
   margin: 1.5rem 0rem 2.5rem 0rem;
   font-weight: 600;
+  font-size: 1.2rem;
   color: var(--color-secondary);
 }
 .experience_btn {
@@ -225,7 +275,7 @@ body {
   text-align: center;
 }
 .blogs {
-  margin-top: 3rem;
+  margin-top: 1rem;
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -237,24 +287,27 @@ body {
 }
 .blog_item > img {
   width: 100%;
-  height: 30rem;
+  height: 40rem;
   object-fit: contain;
-  border-radius: 0.7rem;
+  border-radius: 10px;
 }
 .blog_body {
   width: 90%;
   background-color: var(--color-white);
-  padding: 1.5rem 1.2rem;
+  padding: 1.8rem 1.5rem;
   box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.144);
   margin: 0 auto;
   border-radius: 0.4rem;
   text-align: center;
   position: absolute;
   left: 4.5%;
-  bottom: -6rem;
+  bottom: -5rem;
+}
+.blog_body p{
+  font-weight: 700;
 }
 .blog_title {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   color: var(--color-secondary);
   margin-bottom: none;
 }
