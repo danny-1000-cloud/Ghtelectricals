@@ -338,6 +338,7 @@ body {
 .test_image {
   width: 20%;
   height: 12rem;
+  border-radius: 50%;
 }
 .test_image > img {
   width: 100%;
