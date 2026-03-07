@@ -66,6 +66,7 @@ body {
   text-decoration: none;
   color: var(--color-secondary);
   font-size: 1.5rem;
+  font-weight: 800;
 }
 .nav_btn {
   text-decoration: none;
@@ -145,6 +146,7 @@ body {
 /* section */
 .section {
   padding-top: 5rem;
+  padding-bottom: 10rem;
 }
 .clients_container {
   text-align: center;
@@ -265,60 +267,107 @@ body {
 
 /* blog_container */
 
-.main_container{
-  width: 100%;
-  height: auto; 
-  padding: 5rem 0; 
-  background-color: var(--color-gray);
-}
-.blog_container > .section_header {
-  text-align: center;
-}
-.blogs {
-  margin-top: 1rem;
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-  grid-gap: 2rem;
-}
-.blog_item {
-  width: 100%;
-  position: relative;
-}
-.blog_item > img {
-  width: 100%;
-  height: 40rem;
-  object-fit: contain;
-  border-radius: 10px;
-}
-.blog_body {
-  width: 90%;
-  background-color: var(--color-white);
-  padding: 1.8rem 1.5rem;
-  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.144);
-  margin: 0 auto;
-  border-radius: 0.4rem;
-  text-align: center;
-  position: absolute;
-  left: 4.5%;
-  bottom: -5rem;
-}
-.blog_body p{
-  font-weight: 700;
-}
-.blog_title {
-  font-size: 1.6rem;
-  color: var(--color-secondary);
-  margin-bottom: none;
-}
-.blog_link {
-  text-decoration: none;
-  color: var(--color-primary);
+/* --- NEW PROFESSIONAL PRODUCT SECTION STYLES --- */
+.product-grid-new {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 20px 0;
 }
 
+.product-card-new {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card-new:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.card-img-box-new {
+    height: 250px;
+    background: #f9f9f9;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-img-box-new img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Keeps solar products from being cropped */
+    padding: 20px;
+    transition: transform 0.5s ease;
+}
+
+.product-card-new:hover .card-img-box-new img {
+    transform: scale(1.1);
+}
+
+.card-content-new {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-tag-new {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffb400; /* Solar Gold accent */
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.card-content-new h3 {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.price-tag {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.btn-action-new {
+    margin-top: auto;
+    text-align: center;
+    background: #2c3e50; /* Matches your tech theme */
+    color: #fff;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-action-new:hover {
+    background: #ffb400; /* Turns gold on hover */
+    color: #000;
+}
+
+/* Mobile Tweak */
+@media (max-width: 768px) {
+    .product-grid-new {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+}
 /* testimonial */
 .testimonial {
-  padding: 3rem 0rem;
+  padding: 1px 0rem;
 }
 .testimonial h1{
   display: flex;
